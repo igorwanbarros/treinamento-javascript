@@ -112,11 +112,6 @@
                                 <i class="fa fa-object-group"></i> <span>OBJETOS</span>
                             </a>
                         </li>
-                        <li class="{{ strstr($currentRoute, 'boas-praticas') ? 'active' : '' }}">
-                            <a href="{{url('/boas-praticas')}}">
-                                <i class="fa fa-thumbs-o-up"></i> <span>BOAS PRÁTICAS</span>
-                            </a>
-                        </li>
                         <li class="{{ strstr($currentRoute, 'referencias') ? 'active' : '' }}">
                             <a href="{{url('/referencias')}}">
                                 <i class="fa fa-list-ul"></i> <span>REFERÊNCIAS</span>

@@ -1,11 +1,11 @@
 <form action="" method="GET" id="form_tipo_criacao">
     <div class="form-group col-sm-6">
         <label>Notação Literal</label>
-        <input class="form-control" name="input" id="publico" placeholder="Informe um nome aqui">
+        <input class="form-control" name="input" id="literal" placeholder="Informe um nome aqui">
     </div>
     <div class="form-group col-sm-6">
         <label>Função Construtora</label>
-        <input class="form-control" name="input" id="protegido" placeholder="Informe um nome aqui">
+        <input class="form-control" name="input" id="construtora" placeholder="Informe um nome aqui">
     </div>
 
     <div class="form-group col-sm-12">
@@ -15,32 +15,49 @@
 </form>
 
 <script type="text/javascript">
-    var Notation = (function (nome) {
-        this.nome = nome;
-        this.sobrenome;
+    var Notation = {
 
-        this.getNome = function() {
-            return this.nome;
-        };
+            init: function() {
+                return 'init:: metodo init';
+            },
 
-        this.setNome = function (nome) {
-            this.nome = nome;
+            param: undefined
         };
-    });
-    Notation.prototype.setSobrenome = function(sobrenome) {
-        this.sobrenome = sobrenome;
-    };
-    Notation.prototype.getSobrenome = function() {
-        return this.sobrenome;
-    };
+    function Construtora(){
+        this.param = undefined;
+
+        Construtora.prototype.init = function() {
+            var mensagem = 'iniciando funcao init ;)';
+            console.log(mensagem);
+            return mensagem;
+        };
+    }
+
+    var notation    = Notation;
+    var construtora = new Construtora();
 
     $('#form_tipo_criacao').on('submit', function (event) {
         event.preventDefault();
 
-        var $this = $(this),
-            text  = '';
+        var $this       = $(this),
+            text        = '',
+            literal     = $this.find('#literal'),
+            construct   = $this.find('#construtora');
 
-        text += '<div class="text-justify">: <span style="color: darkorange"></span></div>';
+        if (literal.val() != '') {
+            notation.param = literal.val();
+
+            text += '<div class="text-justify">Notation::init: <span style="color: darkorange">' + notation.init() + '</span></div>';
+            text += '<div class="text-justify">Notation::param: <span style="color: darkorange">' + notation.param + '</span></div>';
+            text += '<br /><br />';
+        }
+        if (construct.val() != '') {
+            construtora.param = construct.val();
+
+            text += '<div class="text-justify">Construtora::init: <span style="color: darkorange">' + construtora.init() + '</span></div>';
+            text += '<div class="text-justify">Construtora::param: <span style="color: darkorange">' + construtora.param + '</span></div>';
+            text += '<br /><br />';
+        }
 
         swal({
             title: "Resultado",
