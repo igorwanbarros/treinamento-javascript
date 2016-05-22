@@ -102,6 +102,11 @@
                                 <i class="fa fa-dot-circle-o"></i> <span>ESCOPO</span>
                             </a>
                         </li>
+                        <li class="{{ strstr($currentRoute, 'fluxo-execucao') ? 'active' : '' }}">
+                            <a href="{{url('/fluxo-execucao')}}">
+                                <i class="fa fa-gears"></i> <span>FLUXO DE EXECUÇÃO</span>
+                            </a>
+                        </li>
                         <li class="{{ strstr($currentRoute, 'objetos-javascript') ? 'active' : '' }}">
                             <a href="{{url('/objetos-javascript')}}">
                                 <i class="fa fa-object-group"></i> <span>OBJETOS</span>
