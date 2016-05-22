@@ -1,18 +1,9 @@
 @extends('app')
 
 @section('content')
-    <div class="box box-warning">
-        <div class="box-header">
-            <h3 class="box-title">
-                ESCOPO
-            </h3>
-        </div>
-        <div class="box-body">
+    <h3>Escopos em Javascript</h3>
+    @include('html.escopo.exemplos')
 
-        </div>
-    </div>
-
-    <script type="text/javascript">
-
-    </script>
+    <h3>Hoisting em Javascript</h3>
+    @include('html.escopo.hoisting')
 @stop
