@@ -132,6 +132,8 @@
             $this.find('#submit').toggleClass('disabled');
         },
         scriptExemploUm = function () {
+
+
             var numero      = 1,
                 resultado   = 'undefined';
 
@@ -147,10 +149,17 @@
             resultado += ',' + numero;
 
             console.log('resposta:', resultado);
+
+
+
+
+
             $('#submit').toggleClass('disabled');
             console.log('\n\n\n');
         },
         scriptExemploDois = function () {
+
+
 
             function externa() {
                 function interna() {
@@ -165,6 +174,9 @@
             }
 
             console.log('resposta:', externa());
+
+
+
             $('#submit').toggleClass('disabled');
             console.log('\n\n\n');
         };
@@ -209,4 +221,21 @@
         });
 
     });
+
+
+    var a = 1;
+    console.log(a); //=> 1
+
+    if (true) {
+        var a = 2;
+        console.log(a); //=> 2
+    }
+
+    console.log(a); //=> 2
+
+
+
+
+
+
 </script>
